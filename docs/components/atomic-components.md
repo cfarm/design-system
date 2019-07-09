@@ -26,7 +26,7 @@ usage: >-
   Phasellus molestie magna non est bibendum non venenatis nisl tempor.
   Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere.
   Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at
-  risus.
+  risus. Yes.
 
 
   **Content guidelines**
