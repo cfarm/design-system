@@ -1,5 +1,5 @@
 ---
-title: Atomic Components
+title: Atomic Components chris left his computer open
 permalink: /components/atomic-components
 layout: component
 collection_name: components
