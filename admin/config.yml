@@ -1,0 +1,132 @@
+backend:
+  name: github
+  repo: test-things/design-system
+  branch: master
+  squash_merges: true
+  base_url: https://netlifycms-auth.glitch.me
+
+logo_url: https://cfpb.github.io/design-manual/static/img/logo/Logo0_@2.png
+publish_mode: editorial_workflow
+media_folder: docs/images/uploads
+public_folder: /design-system/images/uploads
+
+collections:
+  - name: 'pages'
+    label: 'Generic pages'
+    label_singular: 'Generic page'
+    folder: 'docs/pages/'
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    fields:
+      - name: 'title'
+        label: 'Title'
+        widget: 'string'
+      - name: 'permalink'
+        label: 'Page URL'
+        widget: 'permalinkWidget'
+        default: '/SOMETHING'
+      - name: 'layout'
+        value: 'generic-page'
+        widget: 'hidden'
+      - name: 'collection_name'
+        value: 'pages'
+        widget: 'hidden'
+      - name: 'section'
+        label: 'Navigation section'
+        widget: 'sectionWidget'
+        required: false
+        options:
+          - label: 'Getting Started'
+            value: 'getting-started'
+          - label: 'Components'
+            value: 'components'
+          - label: 'Foundation'
+            value: 'foundation'
+          - label: 'Templates'
+            value: 'templates'
+      - name: 'body'
+        label: 'Body'
+        widget: 'bodyWidget'
+  - name: 'components'
+    label: 'Component pages'
+    label_singular: 'Component page'
+    folder: 'docs/components/'
+    create: true
+    delete: true
+    slug: '{{slug}}'
+    fields:
+      - name: 'title'
+        label: 'Title'
+        widget: 'string'
+      - name: 'permalink'
+        label: 'Page URL'
+        widget: 'permalinkWidget'
+        default: '/components/SOMETHING'
+      - name: 'layout'
+        value: 'component'
+        widget: 'hidden'
+      - name: 'collection_name'
+        value: 'components'
+        widget: 'hidden'
+      - name: 'section'
+        value: 'components'
+        widget: 'hidden'
+      - name: 'status'
+        label: 'Implementation status'
+        widget: 'statusWidget'
+        options:
+          - label: 'Proposed'
+            value: 'Proposed'
+          - label: 'In progress'
+            value: 'In progress'
+          - label: 'Beta'
+            value: 'Beta'
+          - label: 'Released'
+            value: 'Released'
+      - name: 'intro'
+        label: 'Intro text'
+        widget: 'introWidget'
+      - name: 'variations'
+        label: 'Variations'
+        widget: 'list'
+        fields:
+          - name: 'variation_name'
+            label: 'Variation name'
+            widget: 'variationNameWidget'
+          - name: 'variation_description'
+            label: 'Variation description'
+            widget: 'variationDescriptionWidget'
+            required: false
+          - name: 'variation_code_snippet'
+            label: 'Variation code snippet'
+            widget: 'variationCodeSnippetWidget'
+          - name: 'variation_jinja_code_snippet'
+            label: 'Variation Jinja links or snippet'
+            hint: 'Use this field to add links to Jinja2 templates in cfgov-refresh.'
+            required: false
+            widget: 'variationJinjaCodeSnippetWidget'
+          - name: 'variation_specs'
+            label: 'Variation specifications'
+            widget: 'variationSpecsWidget'
+            required: false
+      - name: 'usage'
+        label: 'Usage'
+        widget: 'usageWidget'
+        required: false
+      - name: 'accessibility'
+        label: 'Accessibility'
+        widget: 'accessibilityWidget'
+        required: false
+      - name: 'research'
+        label: 'Research'
+        widget: 'researchWidget'
+        required: false
+      - name: 'related_items'
+        label: 'Related items'
+        widget: 'relatedItemsWidget'
+        required: false
+      - name: 'help_us'
+        label: 'Help us make improvements'
+        widget: 'helpUsWidget'
+        required: false
